@@ -1,0 +1,75 @@
+/*  HomePage from src  */
+*{
+   padding: 0rem;
+   margin: 0rem;
+   user-select: none;
+
+}.container{
+    background: #000;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container .topBanner{
+    background: yellow;
+    height: 1.5rem;
+    width: 72%;
+}
+.container  .mainBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container  .mainBody strong{
+      font-size: 2rem;
+       margin: 1rem; ; 
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container .mainBody .postersRow{
+    display: flex;
+    
+}
+.container .mainBody .inputField{
+    display: flex;  
+    margin: 5rem;
+    padding: 3rem;
+}
+.container .mainBody .inputField input {
+    background: black;
+    color: gray;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 2rem;
+    
+}
+/*  Poster from component   */
+
+.poster{
+    background: yellow;
+    padding:1rem;
+    color: #000;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    margin: 1rem; ;
+}
+/*  Board from component   */
+
+.board{ 
+    color: #fff;
+    border: solid 0.1rem orange;
+    border-radius: 1rem;
+    width: 50rem;
+    padding: 1rem;
+    margin: 2rem;
+    line-height: 1rem;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
