@@ -17,7 +17,7 @@ function HomePage() {
 
           {/* Input box started..  */}
           <div className="inputField">
-            <div className="Words">ff</div>
+            <div className="words">ff</div>
             <input type="text" autoCorrect={false} spellCheck="false" ></input>
           </div>
 

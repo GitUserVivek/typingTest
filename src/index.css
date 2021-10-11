@@ -39,14 +39,25 @@
     display: flex;  
     margin: 5rem;
     padding: 3rem;
+    background: red;
 }
 .container .mainBody .inputField input {
     background: black;
     color: gray;
     border: none;
     outline: none;
-    padding: 1rem;
     font-size: 2rem;
+    width: 50%;
+    
+}
+.container .mainBody .inputField .words {
+    background: black;
+    color: gray;
+    border: none;
+    outline: none; 
+    font-size: 2rem;
+    width: 50%;
+    background: gray;
     
 }
 /*  Poster from component   */
