@@ -1,0 +1,25 @@
+{
+  "state": {
+    "ElementsState": {
+      "1": {
+        "1clone1": {
+          "position": "absolute",
+          "fontSize": "",
+          "fontWeight": "",
+          "fontStyle": "",
+          "value": "",
+          "color": "",
+          "left": "226px",
+          "top": "128px"
+        }
+      }
+    },
+    "editableElementId": "1clone1",
+    "EditingElementId": "1",
+    "Paper": {
+      "PaperSize": "A4",
+      "PageOrientation": "Portrait",
+      "margin": ""
+    }
+  }
+}

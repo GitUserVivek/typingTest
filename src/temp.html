@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      table {
+        height: 90px;
+        font-size: 16px;
+        width: 90px;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="div"
+      style="
+        resize: both;
+        width: 300px;
+        height: 300px;
+        overflow: scroll;
+        background-color: l;
+      "
+    >
+      <table border="1">
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      var editable = true;
+      var res = document.getElementById("div");
+      // if(res != null){
+      //     res.addEventListener('click',()=>{
+      //         editable=!editable;
+      //         console.log(editable)
+      //         if(editable){
+      //         res.style.resize="both"
+      //         res.style.overflow="scroll"
+      //         console.log(res.style.resize)
+      //     }else{
+      //         res.style.resize="none"
+      //         res.style.overflow="none"
+      //         console.log(res.style.resize)
+
+      //     }
+      //     })
+    </script>
+  </body>
+</html>

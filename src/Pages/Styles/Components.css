@@ -1,0 +1,353 @@
+/* -------------------------------------------------------------------------------------- */
+
+/*  Universal Styling.. Start.. */
+:root {
+  --mainLight: rgb(42, 110, 161);
+  --mainDark: rgb(10, 90, 150);
+  --propertyColor: rgba(59, 175, 196, 0.575);
+}
+* {
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+  box-sizing: border-box;
+}
+* input[type="text"],
+input[type="number"] {
+  background: rgba(84, 82, 82, 0.637);
+  color: white;
+  border: none;
+  border-bottom: 2.5px solid var(--mainDark);
+  border-radius: 0.2rem;
+}
+.body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+.home {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: scroll;
+}
+
+.editing {
+  border: blue dotted 2px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.smallInput0 {
+  width: 2.5rem !important;
+  padding: 0.1rem;
+  box-sizing: content-box;
+}
+.smallInput1 {
+  width: 3rem !important;
+  padding: 0.1rem;
+}
+.smallInput3 {
+  width: 8rem !important;
+  padding: 0.1rem;
+}
+.smallInput ::-webkit-meter-optimum-value {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+/* Styling for NavBar.. Starts.. */
+
+.NavBar {
+  background: var(--mainDark);
+  height: fit-content;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0px 2px 5px black;
+  border-radius: 0px 0px 1rem 1rem;
+}
+
+.NavBar .NavItem {
+  color: white;
+  padding: 0.3rem;
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.NavBar span {
+  color: white;
+  padding: 0.5rem;
+}
+.NavBar .printButton {
+  background: var(--mainDark);
+  padding: 0.2rem 1.5rem;
+  border-radius: 1rem;
+  border: solid transparent 1px;
+  color: white;
+}
+.NavBar .printButton:hover {
+  background: var(--mainLight);
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+/* Styling for PropertiesSection.. starts.. */
+.PropertiesSection {
+  flex: 2.5;
+  background: lightcyan;
+}
+.PropertiesToolBar {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  overflow: scroll;
+}
+.PropertiesToolBar * {
+  margin: 0.2rem;
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  justify-self: center;
+  align-self: start;
+}
+.PropertiesToolBar button {
+  background: var(--mainDark);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: solid transparent 1px;
+  color: white;
+}
+.PropertiesToolBar button:hover {
+  background: var(--mainLight);
+}
+.PropertiesToolBar .PropertiesContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+  height: 100%;
+}
+.PropertiesToolBar .PropertiesHeandings {
+  font-weight: 900;
+  position: relative;
+  float: inline-start;
+}
+.PropertiesToolBar .title {
+  font-weight: 700;
+  justify-self: start;
+  align-self: baseline;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  margin: 0;
+  padding: 0.3rem;
+  border-bottom: black solid 1px;
+  box-sizing: border-box;
+}
+
+.PropertiesToolBar .PageLayout {
+  /* height: 100%;   
+  width: 90% !important;    */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+}
+.PropertiesToolBar .PageLayout * {
+  justify-self: start;
+  align-self: center;
+}
+.PropertiesToolBar select {
+  background-color: var(--mainLight);
+  color: white;
+  border-radius: 5px !important;
+}
+.PropertiesToolBar select * {
+  background-color: var(--mainLight);
+  color: white;
+}
+.PropertiesToolBar .FontStyle {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* justify-content: center;    */
+}
+
+.PropertiesToolBar .FontStyle * {
+  justify-self: start;
+  align-self: center;
+}
+
+.PropertiesToolBar .FontActive {
+  background: rgba(45, 41, 41, 0.633);
+  padding: 0.3rem 0.6rem;
+  text-align: center;
+  margin: 0.3rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  font-style: italic;
+}
+.PropertiesToolBar .FontNormal {
+  background-color: var(--propertyColor);
+  padding: 0.3rem 0.6rem;
+  text-align: center;
+  margin: 0.3rem;
+  border-radius: 0.3rem;
+  font-style: italic;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.PropertiesContainer * {
+  justify-self: center;
+  align-self: center;
+}
+.singleProp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.propertyLogo {
+  height: 25px;
+}
+/* elements in property.. */
+.propertyElementLine {
+  height: 2px;
+  width: 50px;
+  background-color: black;
+  resize: horizontal;
+  overflow: scroll;
+}
+.dragableTable {
+  margin: 0px;
+  padding: 0;
+}
+/* -------------------------------------------------------------------------------------- */
+
+/* Styling For ToolBox.. / ToolBar  starts.. */
+
+.PropertyElements {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.PropertyElements * {
+  align-self: center;
+}
+.PropertyElements:last-child {
+  height: 50px;
+  width: 50px;
+}
+
+table * {
+  margin: 0 !important;
+  padding: 0;
+}
+td {
+  margin: 0;
+  padding: 4.8px;
+}
+tr {
+  margin: 0;
+  padding: 0px;
+}
+tbody {
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+/* Styling for PaperArea.. starts */
+
+.PaperArea {
+  overflow: scroll;
+  width: 100%;
+  z-index: 0;
+}
+
+/* .PaperArea {
+  flex: 4.5;   
+} */
+
+.MainPage {
+  position: relative;
+  background: rgb(233, 227, 227);
+  margin: 1rem;
+  z-index: 0;
+  box-shadow: 2px -2px 10px black;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ContextMenu {
+  height: 15rem;
+  width: 11rem;
+  background: white;
+  color: black;
+  display: grid;
+  justify-content: stretch;
+  align-items: flex-start;
+  position: absolute;
+  font-weight: 700;
+  box-shadow: 5px 2px 5px gray;
+  transition-duration: 0.07s;
+  padding: 0.8rem;
+  opacity: 0.7;
+  border-radius: 8px;
+}
+.ContextMenu button {
+  width: 100%;
+}
+.header {
+  flex: 1;
+  background-color: red;
+  width: 100%;
+}
+
+.data {
+  flex: 1;
+  background-color: rgb(87, 42, 170);
+  width: 100%;
+}
+
+.footer {
+  flex: 1;
+  background-color: rgb(177, 136, 33);
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+/* Styling For Printer.. starts.. */
+
+@media print {
+  * {
+    resize: none !important;
+  }
+  .body .NavBar {
+    display: none;
+  }
+  .home .ToolBox {
+    display: none;
+  }
+  .home .PropertiesToolBar {
+    display: none;
+  }
+  .MainPage {
+    box-shadow: none;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+  }
+}
+
+/* -------------------------------------------------------------------------------------- */
