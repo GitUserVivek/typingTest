@@ -1,10 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Body from "./Pages/Body";
+import HomePage from "./HomePage";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Body />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<HomePage />, document.getElementById("root"));

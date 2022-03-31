@@ -83,7 +83,6 @@ const handelDragOver = (e, obj) => {
 // -----------------------------------------------Handeled.. DragOver.. --------------------------------------
 //
 const stylingElement = (dragableElement, obj) => {
-  debugger;
   dragableElement.style.position =
     obj.state.ElementsState[obj.state.EditingElementId][
       dragableElement.id

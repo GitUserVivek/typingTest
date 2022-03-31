@@ -29,7 +29,7 @@ const Paper = ({ obj }) => {
     document.addEventListener("keydown", (e) => {
       if (e.key === "Delete") {
         if (obj.state.editableElementId != null) {
-          debugger;
+ 
 
           document.getElementById(obj.state.editableElementId).remove();
           delete obj.state.ElementsState[obj.state.EditingElementId][
