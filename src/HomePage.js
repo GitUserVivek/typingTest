@@ -69,7 +69,7 @@ export default class HomePage extends Component {
   constructor() {
     super();
     this.state = {
-      remSecs: 60,
+      remSecs: 10,
       Para: [
         "We have found Paragraphs and associated modules to be a very successful recipe. Our clients love the plugability and extensibility of the system. if they need something new then we can build it. Oftentimes they are happy with the standard Paragraph bundles we can provide with Paragraphs pack. We are therefore continuing to build the ecosystem to support our own site building efforts. Bundles which have general application will be released back into Paragraphs Pack. We are also committed to ensuring a great developer experience. Our modules do not ship as features. You won;t need to worry about overrides with us. All the site buider needs to do is enable the modules make the required tweaks if any and capture the config in their own feature. Come find out more at our DrupalSouth talk: Power to the editors: Introducing the Paragraphs module.",
         "This hook makes it super easy to subscribe to data in your Firestore database without having to worry about state management. Instead of calling Firestore's query.onSnapshot() method you simply pass a query to useFirestoreQuery() and you get back everything you need including status data and error. Your component will render again when data changes and your subscription will be automatically removed when the component unmounts. Our example even supports dependent queries where you can wait on needed data by passing a falsy value to the hook. Read through the recipe and comments below to see how it works.",
@@ -163,18 +163,21 @@ export default class HomePage extends Component {
                     </div>
                     <button
                       onClick={() => {
-                        debugger;
-                        axios.post(
-                          "https://educationwebworld.000webhostapp.com/React-Js/saveData.php",
-                          {
-                            name: this.state.user.userFullName,
-                            email: this.state.user.userEmail,
-                            speed: this.state.correct,
-                            image: this.state.user.userPic,
-                            token: this.state.user.userToken,
-                          }
-                        );
-                        console.log("done..");
+                        let data = new FormData();
+                        data.append("name", this.state.user.userFullName);
+                        data.append("email", this.state.user.userEmail);
+                        data.append("speed", this.state.user.correct);
+                        data.append("image", this.state.user.userPic);
+                        data.append("token", this.state.user.userToken);
+                        data.append("action", "INSERT");
+                        axios
+                          .post(
+                            // "http://localhost/img/store.php",
+                            "https://educationwebworld.000webhostapp.com/React-Js/index.php",
+                            data
+                          )
+                          .then((res) => console.log(res.data));
+
                         this.setState({
                           remSecs: 60,
                           currentPara:
@@ -223,6 +226,7 @@ export default class HomePage extends Component {
                               this.state.remSecs = e.target.value;
                             }}
                           >
+                            <option>10</option>
                             <option>60</option>
                             <option>120</option>
                             <option>180</option>
@@ -354,7 +358,6 @@ export default class HomePage extends Component {
                               document.getElementById("inProgress");
                             inProgress.innerText += word[0];
 
-                            debugger;
                             this.state.currentPara[0] === " "
                               ? this.setState({
                                   currentPara: this.state.currentPara.slice(

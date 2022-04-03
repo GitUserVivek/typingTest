@@ -209,3 +209,7 @@ body {
   font-size: 14px !important;
   padding: 0rem 0.2rem !important;
 }
+
+.disclaimer {
+  display: none;
+}
