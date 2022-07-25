@@ -94,8 +94,7 @@ export default class HomePage extends Component {
   }
   componentDidMount() {
     this.state.currentPara = this.state.Para[this.state.indexOfParaList];
-    this.state.typingPara =
-      this.state.Para[this.state.indexOfParaList].split(" ");
+    this.state.typingPara = this.state.Para[this.state.indexOfParaList].split(" ");
     this.setState({ ...this.state });
     this.checkUserState();
   }
@@ -143,8 +142,7 @@ export default class HomePage extends Component {
     }
   }
   render() {
-    const clientId =
-      "1082757406270-hjptn6fkt7o21tj9cl3r6n2qpqangpro.apps.googleusercontent.com";
+    const clientId = "1082757406270-hjptn6fkt7o21tj9cl3r6n2qpqangpro.apps.googleusercontent.com";
     return (
       <>
         {
@@ -180,12 +178,8 @@ export default class HomePage extends Component {
 
                         this.setState({
                           remSecs: 60,
-                          currentPara:
-                            this.state.Para[this.state.indexOfParaList],
-                          typingPara:
-                            this.state.Para[this.state.indexOfParaList].split(
-                              " "
-                            ),
+                          currentPara: this.state.Para[this.state.indexOfParaList],
+                          typingPara: this.state.Para[this.state.indexOfParaList].split(" "),
                           correct: 0,
                           wrong: 0,
                           readOnly: false,
@@ -208,12 +202,7 @@ export default class HomePage extends Component {
                 <>
                   <div className="postersRow">
                     {this.state.typing ? (
-                      <Counter
-                        objRemSecs={this}
-                        seconds={this.state.remSecs}
-                        correct={this.state.correct}
-                        wrong={this.state.wrong}
-                      />
+                      <Counter objRemSecs={this} seconds={this.state.remSecs} correct={this.state.correct} wrong={this.state.wrong} />
                     ) : (
                       <div className="Timing">
                         <div className="poster">
@@ -247,40 +236,21 @@ export default class HomePage extends Component {
                             {/* Your High Score is : 30 /min */}
                           </>
                         ) : (
-                          <GoogleLogin
-                            className="GoogleLogin"
-                            clientId={clientId}
-                            buttonText="Login"
-                            onSuccess={this.tryLogin}
-                            cookiePolicy={"single_host_origin"}
-                          />
+                          <GoogleLogin className="GoogleLogin" clientId={clientId} buttonText="Login" onSuccess={this.tryLogin} cookiePolicy={"single_host_origin"} />
                         )}
                         {this.state.signedIn ? (
                           <>
                             <br />
-                            <GoogleLogout
-                              className="GoogleLogout"
-                              clientId={clientId}
-                              buttonText="LogOut"
-                              onLogoutSuccess={this.tryLogout}
-                            />
+                            <GoogleLogout className="GoogleLogout" clientId={clientId} buttonText="LogOut" onLogoutSuccess={this.tryLogout} />
                           </>
                         ) : null}
                       </div>
                       {/* -------------- */}
                     </div>
                   </div>
-                  <div className="givenPara">
-                    {this.state.Para[this.state.indexOfParaList]}
-                  </div>
+                  <div className="givenPara">{this.state.Para[this.state.indexOfParaList]}</div>
                   <div className="inputField">
-                    <div
-                      id="completedWords"
-                      onClick={() =>
-                        document.getElementById("inputBox").focus()
-                      }
-                      className="words"
-                    >
+                    <div id="completedWords" onClick={() => document.getElementById("inputBox").focus()} className="words">
                       <div id="inProgress"></div>
                     </div>
                     <input
@@ -298,39 +268,24 @@ export default class HomePage extends Component {
                       onKeyDown={(e) => {
                         if (e.key === " ") {
                           let newWord = document.createElement("span");
-                          let completedWords =
-                            document.getElementById("completedWords");
+                          let completedWords = document.getElementById("completedWords");
 
-                          if (
-                            e.target.value.trim() === this.state.typingPara[0]
-                          ) {
+                          if (e.target.value.trim() === this.state.typingPara[0]) {
                             newWord.className = "correctWord";
                             this.state.typingPara.shift();
                             this.setState({ correct: this.state.correct + 1 });
 
-                            if (completedWords.hasChildNodes())
-                              completedWords.childNodes[
-                                document.getElementById("completedWords")
-                                  .childNodes.length - 1
-                              ].remove();
+                            if (completedWords.hasChildNodes()) completedWords.childNodes[document.getElementById("completedWords").childNodes.length - 1].remove();
                           } else {
-                            let completedWords =
-                              document.getElementById("completedWords");
+                            let completedWords = document.getElementById("completedWords");
                             this.state.typingPara.shift();
                             newWord.className = "wrongWord";
                             this.setState({ wrong: this.state.wrong + 1 });
 
-                            if (completedWords.hasChildNodes())
-                              completedWords.childNodes[
-                                document.getElementById("completedWords")
-                                  .childNodes.length - 1
-                              ].remove();
+                            if (completedWords.hasChildNodes()) completedWords.childNodes[document.getElementById("completedWords").childNodes.length - 1].remove();
 
                             this.setState({
-                              currentPara: this.state.currentPara.slice(
-                                this.state.currentPara.indexOf(" ") + 1,
-                                this.state.currentPara.length - 1
-                              ),
+                              currentPara: this.state.currentPara.slice(this.state.currentPara.indexOf(" ") + 1, this.state.currentPara.length - 1),
                             });
                           }
 
@@ -342,55 +297,35 @@ export default class HomePage extends Component {
                           e.target.value = "";
                           if (this.state.currentPara[0] === " ") {
                             this.setState({
-                              currentPara: this.state.currentPara.slice(
-                                1,
-                                this.state.currentPara.length
-                              ),
+                              currentPara: this.state.currentPara.slice(1, this.state.currentPara.length),
                             });
                           }
                         } else {
-                          let word = this.state.currentPara.trim();
-                          if (
-                            e.key === word[0] &&
-                            this.state.wrongStrokes == 0
-                          ) {
-                            let inProgress =
-                              document.getElementById("inProgress");
+                          let word = this.state.currentPara;
+                          if (e.key === word[0] && this.state.wrongStrokes == 0) {
+                            let inProgress = document.getElementById("inProgress");
                             inProgress.innerText += word[0];
 
                             this.state.currentPara[0] === " "
                               ? this.setState({
-                                  currentPara: this.state.currentPara.slice(
-                                    2,
-                                    this.state.currentPara.length - 1
-                                  ),
+                                  currentPara: this.state.currentPara.slice(2, this.state.currentPara.length - 1),
                                 })
                               : this.setState({
-                                  currentPara: this.state.currentPara.slice(
-                                    1,
-                                    this.state.currentPara.length - 1
-                                  ),
+                                  currentPara: this.state.currentPara.slice(1, this.state.currentPara.length - 1),
                                 });
                           } else {
                             if (e.key.length === 1 && !e.ctrlKey) {
-                              let inProgress =
-                                document.getElementById("inProgress");
+                              let inProgress = document.getElementById("inProgress");
                               inProgress.innerText += e.key;
                               this.state.wrongStrokes += 1;
                               inProgress.classList.add("wrongTyping");
                             } else {
                               if (e.key === "Backspace") {
                                 if (this.state.wrongStrokes === 0) {
-                                  this.state.currentPara =
-                                    e.target.value.charAt(
-                                      e.target.value.length - 1
-                                    ) + this.state.currentPara;
+                                  this.state.currentPara = e.target.value.charAt(e.target.value.length - 1) + this.state.currentPara;
                                 } else {
                                   this.state.wrongStrokes -= 1;
-                                  if (this.state.wrongStrokes === 0)
-                                    document
-                                      .getElementById("inProgress")
-                                      .classList.remove("wrongTyping");
+                                  if (this.state.wrongStrokes === 0) document.getElementById("inProgress").classList.remove("wrongTyping");
                                 }
                               }
                             }
@@ -399,18 +334,10 @@ export default class HomePage extends Component {
                       }}
                       onKeyUp={(e) => {
                         if (e.key === "Backspace") {
-                          let lastChild =
-                            document.getElementById("completedWords");
-                          lastChild =
-                            lastChild.childNodes[
-                              lastChild.childNodes.length - 1
-                            ];
+                          let lastChild = document.getElementById("completedWords");
+                          lastChild = lastChild.childNodes[lastChild.childNodes.length - 1];
                           lastChild.innerText = e.target.value;
-                          console.log(
-                            e.target.value.length,
-                            e.target.value,
-                            lastChild.innerText
-                          );
+                          console.log(e.target.value.length, e.target.value, lastChild.innerText);
                         }
                       }}
                     ></input>
