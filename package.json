@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "requiredComment01_homepage0": "https://educationwebworld.000webhostapp.com/TypingTest/React-Js/",
-  "homepage": "https://educationwebworld.000webhostapp.com/TypingTest/React-Js/",
+  "homepage": "https://gituservivek.github.io/typingTest",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
